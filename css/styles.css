@@ -1,0 +1,318 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #373737;
+  height: 83px;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+.nav a:hover { color: #32c1d0; }
+
+.search-bar {
+  width: 240px;
+  height: 75px;
+  background: #278da4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 15px;
+}
+.search-bar input {
+  flex: 1;
+  height: 32px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+.search-bar input::placeholder { color: #b5b4b4; }
+.search-icon { width: 22px; height: 22px; cursor: pointer; }
+
+.rect-2 { width: 100%; height: 8px; background: #278da4; }
+
+.contact-bar {
+  background: #ffffff;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 220px minmax(720px, 1fr) 210px;
+  column-gap: 60px;
+  align-items: center;
+}
+
+.brand img { height: 50px; width: auto; display: block; }
+
+.info-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  min-width: 720px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 12px;
+  min-width: 300px;
+}
+
+.icon-ring {
+  display: inline-grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+}
+.info.email .icon-ring { width: 44px; height: 44px; }
+.info.phone .icon-ring { width: 41px; height: 41px; }
+.info .icon-ring img { width: 18px; height: 18px; }
+
+.info-text .label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+  text-transform: uppercase;
+}
+.info-text .value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+}
+.info-text .value.muted { color: #b5b4b4; }
+
+.btn.pill {
+  justify-self: end;
+  background: #278DA4;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease;
+}
+.btn.pill:hover { background: #32C1D0; }
+
+@media (max-width: 1100px) {
+  .contact-row {
+    grid-template-columns: 200px 1fr 190px;
+    column-gap: 36px;
+  }
+  .info-wrap { min-width: 0; gap: 36px; }
+  .info { min-width: 260px; }
+}
+@media (max-width: 760px) {
+  .contact-row {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+  .brand, .btn.pill { justify-self: center; }
+  .info-wrap {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 492px;
+  background: url("../assets/young-handsome-physician-medical-robe-with-stethoscope.jpg")
+              no-repeat right center / cover;
+  background-color: #eaf2f4;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  left: 338px;
+  top: 140px;
+  max-width: 353px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  color: #000;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    background-position: center;
+  }
+  .hero-content {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+.info-band { margin-top: 0; }
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.info-card {
+  position: relative;
+  height: 230px;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.info-card.info-1 { 
+  background-image: url("../assets/dentistry-team.jpg");
+}
+.info-card.info-2 { 
+  background-image: url("../assets/dentist-process-dental-services-dental-office-dental-treatment.jpg");
+}
+.info-card.info-3 { 
+  background-image: url("../assets/crop-doctor-using-smarthone-office.jpg");
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 141, 164, 0.9);
+  z-index: 1;
+}
+.info-card.info-2::before {
+  background: rgba(50, 193, 208, 0.9); 
+}
+
+.info-inner {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  height: 100%;
+  padding: 26px 24px;
+  display: grid;
+  align-content: start;
+  row-gap: 10px;
+}
+
+.ring {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.ring img { width: 22px; height: 22px; }
+
+.info-inner h3 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  text-transform: uppercase;
+}
+
+.info-inner .desc {
+  font-size: 16px;
+  line-height: 19px;
+  max-width: 300px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.columns {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 24px;
+  row-gap: 4px;
+  font-size: 16px;
+  line-height: 19px;
+}
+.columns .muted { opacity: 0.95; }
+.align-right { text-align: right; }
+
+.btn.white {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+.btn.white:hover { background: rgba(255,255,255,0.12); }
+
+@media (max-width: 1024px) {
+  .info-row { grid-template-columns: 1fr; }
+  .info-card { height: 220px; }
+}
