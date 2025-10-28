@@ -18,14 +18,12 @@ body {
   display: flex;
   align-items: center;
 }
-
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-
 .nav-list {
   list-style: none;
   display: flex;
@@ -58,7 +56,7 @@ body {
   border: none;
   outline: none;
   background: transparent;
-  color: white;
+  color: #fff;
   font-size: 16px;
 }
 .search-bar input::placeholder { color: #b5b4b4; }
@@ -71,14 +69,12 @@ body {
   padding: 18px 0;
   border-bottom: 1px solid #eee;
 }
-
 .contact-row {
   display: grid;
   grid-template-columns: 220px minmax(720px, 1fr) 210px;
   column-gap: 60px;
   align-items: center;
 }
-
 .brand img { height: 50px; width: auto; display: block; }
 
 .info-wrap {
@@ -86,17 +82,13 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  min-width: 720px;
 }
-
 .info {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   column-gap: 12px;
-  min-width: 300px;
 }
-
 .icon-ring {
   display: inline-grid;
   place-items: center;
@@ -107,7 +99,6 @@ body {
 .info.email .icon-ring { width: 44px; height: 44px; }
 .info.phone .icon-ring { width: 41px; height: 41px; }
 .info .icon-ring img { width: 18px; height: 18px; }
-
 .info-text .label {
   font-weight: 600;
   font-size: 12px;
@@ -122,7 +113,6 @@ body {
   color: #000;
 }
 .info-text .value.muted { color: #b5b4b4; }
-
 .btn.pill {
   justify-self: end;
   background: #278DA4;
@@ -140,27 +130,6 @@ body {
 }
 .btn.pill:hover { background: #32C1D0; }
 
-@media (max-width: 1100px) {
-  .contact-row {
-    grid-template-columns: 200px 1fr 190px;
-    column-gap: 36px;
-  }
-  .info-wrap { min-width: 0; gap: 36px; }
-  .info { min-width: 260px; }
-}
-@media (max-width: 760px) {
-  .contact-row {
-    grid-template-columns: 1fr;
-    row-gap: 14px;
-  }
-  .brand, .btn.pill { justify-self: center; }
-  .info-wrap {
-    flex-direction: column;
-    gap: 12px;
-    justify-content: center;
-  }
-}
-
 .hero {
   position: relative;
   width: 100%;
@@ -169,7 +138,6 @@ body {
               no-repeat right center / cover;
   background-color: #eaf2f4;
 }
-
 .hero::after {
   content: "";
   position: absolute;
@@ -177,7 +145,6 @@ body {
   background: rgba(255,255,255,0.5);
   z-index: 1;
 }
-
 .hero-content {
   position: absolute;
   left: 338px;
@@ -185,9 +152,7 @@ body {
   max-width: 353px;
   z-index: 2;
 }
-
 .hero-content h1 {
-  font-family: "Inter", sans-serif;
   font-weight: 800;
   font-size: 36px;
   line-height: 44px;
@@ -196,123 +161,110 @@ body {
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .hero {
-    background-position: center;
-  }
-  .hero-content {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    text-align: center;
-  }
+.info-band {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
-
-.info-band { margin-top: 0; }
-
 .info-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
   gap: 0;
 }
-
 .info-card {
   position: relative;
   height: 230px;
   background-position: center;
   background-size: cover;
+  color: #fff;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-
-.info-card.info-1 { 
+.info-card.info-1 {
   background-image: url("../assets/dentistry-team.jpg");
 }
-.info-card.info-2 { 
+.info-card.info-2 {
   background-image: url("../assets/dentist-process-dental-services-dental-office-dental-treatment.jpg");
 }
-.info-card.info-3 { 
+.info-card.info-3 {
   background-image: url("../assets/crop-doctor-using-smarthone-office.jpg");
 }
-
 .info-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(39, 141, 164, 0.9);
-  z-index: 1;
+  background: rgba(39,141,164,0.9);
 }
 .info-card.info-2::before {
-  background: rgba(50, 193, 208, 0.9); 
+  background: rgba(50,193,208,0.9);
 }
 
 .info-inner {
   position: relative;
-  z-index: 2;
-  color: #fff;
-  height: 100%;
-  padding: 26px 24px;
-  display: grid;
-  align-content: start;
-  row-gap: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
 }
-
-.ring {
-  width: 44px;
-  height: 44px;
-  display: inline-grid;
-  place-items: center;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.55);
-  border-radius: 999px;
-  margin-bottom: 6px;
+.icon {
+  width: 60px;
+  height: 60px;
+  filter: brightness(0) invert(1);
 }
-.ring img { width: 22px; height: 22px; }
-
-.info-inner h3 {
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.text-block h3 {
   font-weight: 400;
   font-size: 28px;
   line-height: 34px;
   text-transform: uppercase;
+  color: #fff;
 }
-
-.info-inner .desc {
+.text-block .desc {
   font-size: 16px;
   line-height: 19px;
-  max-width: 300px;
-  color: #ffffff;
-  opacity: 1;
+  max-width: 320px;
 }
-
 .columns {
-  margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr auto;
   column-gap: 24px;
   row-gap: 4px;
   font-size: 16px;
   line-height: 19px;
+  width: 100%;
 }
-.columns .muted { opacity: 0.95; }
 .align-right { text-align: right; }
-
 .btn.white {
-  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 8px 24px;
   border-radius: 999px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
+  border: 1px solid #fff;
+  color: #fff;
   font-size: 12px;
-  line-height: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s ease;
+  text-transform: uppercase;
 }
-.btn.white:hover { background: rgba(255,255,255,0.12); }
-
+.btn.white:hover {
+  background: rgba(255,255,255,0.15);
+}
 @media (max-width: 1024px) {
   .info-row { grid-template-columns: 1fr; }
-  .info-card { height: 220px; }
+  .info-card { height: auto; }
+  .info-inner { flex-direction: column; text-align: center; align-items: center; }
 }
