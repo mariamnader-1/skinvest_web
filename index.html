@@ -183,7 +183,10 @@
         <span class="circle"><span class="dot"></span></span>
         <span class="line"></span>
       </div>
-
+ <!-- Add this divider line -->
+  <div class="title-divider">
+    <span class="circle"></span>
+  </div>
       <h3>We Provide Most Professional Service<br>Since 1978</h3>
       <p class="about-desc">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem loremIpsum has been the industry’s
@@ -448,6 +451,7 @@
     <p>Lorem ipsum is a dummy text it will use for subtitle here</p>
     <a href="#" class="btn-outline">View Profile</a>
   </div>
+  
 </section>
 <section class="testimonials">
   <div class="overlay"></div>
@@ -601,7 +605,7 @@
 <footer class="footer">
   <div class="footer-container">
 
-    
+    <!-- About Section -->
     <div class="footer-about">
       <img src="assets/logo.png" alt="Skinvest Logo" class="footer-logo">
       <p class="footer-desc">
@@ -617,7 +621,7 @@
       <img src="assets/social media icons2-01.png" alt="Social Media Icons" class="social-strip">
     </div>
 
-    
+    <!-- Services -->
     <div class="footer-col">
       <h3>Services</h3>
       <ul>
@@ -631,17 +635,17 @@
       </ul>
     </div>
 
-    
+    <!-- Latest News -->
     <div class="footer-col">
       <h3>Latest News</h3>
       <ul class="news-list">
-        <li>- Lates Blog Post With Image<br><span>28 Jul, 2020</span></li>
-        <li>- Lates Blog Post With Image<br><span>28 Jul, 2020</span></li>
-        <li>- Lates Blog Post With Image<br><span>28 Jul, 2020</span></li>
+        <li>- Latest Blog Post With Image<br><span>28 Jul, 2020</span></li>
+        <li>- Latest Blog Post With Image<br><span>28 Jul, 2020</span></li>
+        <li>- Latest Blog Post With Image<br><span>28 Jul, 2020</span></li>
       </ul>
     </div>
 
-    
+    <!-- Contact Form -->
     <div class="footer-form">
       <h3>Contact Form</h3>
       <form>
@@ -653,6 +657,9 @@
     </div>
 
   </div>
+
+  <!-- Optional separator line at the bottom -->
+  <div class="footer-line"></div>
 </footer>
 
 
@@ -663,6 +670,18 @@
   <div class="footer-line"></div> 
 </footer>
 
+<script>
+  const hamburger = document.createElement('div');
+  hamburger.classList.add('hamburger');
+  hamburger.innerHTML = '<span></span><span></span><span></span>';
+  document.querySelector('.header-inner').prepend(hamburger);
+
+  const navList = document.querySelector('.nav-list');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navList.classList.toggle('active');
+  });
+</script>
 
 
 </body>
